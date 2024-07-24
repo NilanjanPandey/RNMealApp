@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Pressable, StyleSheet, Text, Platform } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-function CategoryGridTile({ title, color }) {
+function CategoryGridTile({ id,title, color,onPressNavigation }) {
   return (
     <View style={[styles.gridItem]}>
       <Pressable
@@ -10,8 +11,10 @@ function CategoryGridTile({ title, color }) {
           pressed ? styles.iOSElevation : null,
         ]}
         android_ripple={{ color: "grey" }}
+        onPress={onPressNavigation}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
+          {/* <Ionicons name="menu-sharp" size={24} color="black" /> */}
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
@@ -44,13 +47,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontWeight: "bold",
+    // fontWeight: "bold",
     fontSize: 18,
+    color: "white",
   },
   innerContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "baseline",
+    justifyContent: "flex-end",
     padding: 16,
     borderRadius: 8,
   },
