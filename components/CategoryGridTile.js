@@ -2,7 +2,7 @@ import React from "react";
 import { View, Pressable, StyleSheet, Text, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-function CategoryGridTile({ id,title, color,onPressNavigation }) {
+function CategoryGridTile({ id, title, color, onPressNavigation }) {
   return (
     <View style={[styles.gridItem]}>
       <Pressable
