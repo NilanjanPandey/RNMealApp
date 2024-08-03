@@ -1,8 +1,6 @@
 import { useLayoutEffect } from "react";
 import { MEALS, CATEGORIES } from "../Mockdata/dummy-data";
-import { View, FlatList, StyleSheet } from "react-native";
-import MealItem from "../components/MealItem";
-// import { useRoute } from "@react-navigation/native";
+import MealsList from "../components/MealsList/MealsList";
 
 function MealsOverviewScreen({ navigation, route }) {
   // const route = useRoute(); An alternative approach if you are not interested in props.
@@ -19,34 +17,7 @@ function MealsOverviewScreen({ navigation, route }) {
     });
   }, [catID, navigation]);
 
-  function renderMealDetail({ item }) {
-    return (
-      <MealItem
-        id={item.id}
-        title={item.title}
-        imageUrl={item.imageUrl}
-        duration={item.duration}
-        complexity={item.complexity}
-        affordability={item.affordability}
-      />
-    );
-  }
-  // console.log(displayedMeal)
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={displayedMeal}
-        keyExtractor={(item) => item.id}
-        renderItem={renderMealDetail}
-      />
-    </View>
-  );
+  return <MealsList displayedMeal={displayedMeal} />;
 }
 
 export default MealsOverviewScreen;
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-});

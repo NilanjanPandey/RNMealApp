@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
-import MealMetaData from "./MealMetaData";
+import MealMetaData from "../MealMetaData";
 function MealItem(props) {
   const navigation = useNavigation();
   function pressHandler() {
