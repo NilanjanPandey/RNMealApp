@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Pressable, StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 function MealHeaderButton(props) {
@@ -16,6 +16,6 @@ function MealHeaderButton(props) {
 export default MealHeaderButton;
 const styles = StyleSheet.create({
   pressed: {
-    opacity: 0.5,
+    opacity: 0.75,
   },
 });
